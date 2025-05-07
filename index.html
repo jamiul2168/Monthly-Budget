@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Loading</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .loader {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      color: #333;
+      z-index: 9999;
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Simple Loading Text -->
+  <div class="loader" id="loader">Loading...</div>
+
+  <!-- Embedded Script Page -->
+  <iframe 
+    src="https://script.google.com/macros/s/AKfycbys0bUMX6nWOxpCCV7xi7JmLb8HyHg1U2VAel2wVNqL3zkoIuAeafpGK91mdaseaOwA/exec" 
+    onload="document.getElementById('loader').style.display='none';">
+  </iframe>
+
+  <!-- Disable Right Click -->
+  <script>
+    document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+    });
+  </script>
+
+</body>
+</html>
